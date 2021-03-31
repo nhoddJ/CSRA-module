@@ -47,7 +47,7 @@ class CSRA_VGG16_2branch(nn.Module):
         if mode == 'train':
             cam1, cam2  = self.get_forward_GradCAM_maps(x1,x2m)  # get forward CAM maps of all classes of two branches
             region_mask = self.mask_downsampling_v2(x2,(x2m.shape[-2],x2m.shape[-1]))
-            return x,cam1.reshape(cam1.shape[0],cam1.shape[1],-1),cam2.reshape(cam1.shape[0],cam1.shape[1],-1),region_mask
+            return x,cam1.reshape(cam1.shape[0],cam1.shape[1],-1),cam2.reshape(cam2.shape[0],cam2.shape[1],-1),region_mask
         else:
             return x
 
