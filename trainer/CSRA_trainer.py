@@ -98,6 +98,7 @@ class CSRA_Trainer(object):
         device = self.device
         f_pred = []
         f_gt = []
+        vmix = -1
         val_loader = tqdm(val_loader, desc='Validation')
         for i, (input1, input2, filenames, targets) in enumerate(val_loader):
             if opt.use_gpu:
